@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  cache-olo:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: ["sh", "-c", "go build && chmod +x main.go && while true; do ./main; sleep 15; done"]
+    restart: always
